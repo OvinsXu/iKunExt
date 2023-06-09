@@ -1,0 +1,52 @@
+{
+  "name": "哥哥的插件",
+  "version": "1.0",
+  "description": "iKun必备小插件",
+  "manifest_version": 3,
+  "action": {
+    "default_title": "我只会心疼giegie!",
+    "default_icon": "/images/logo.png",
+    "default_popup": "/html/popup.html",
+    "description": "浏览器点击插件按钮打开的界面"
+  },
+  "icons": {
+    "128": "/images/logo.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "/js/content.js"
+      ],
+      "description": "注入到浏览页面上的脚本"
+    }
+  ],
+  "commands": {
+    "_execute_action": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+F",
+        "mac": "MacCtrl+Shift+F"
+      },
+      "description": "快捷键打开popup界面"
+    }
+  },
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "permissions": [
+    "activeTab"
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "images/*",
+        "audio/*"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+    }
+  ]
+}
